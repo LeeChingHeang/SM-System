@@ -37,18 +37,13 @@ def main():
 #  The selection option function
 def options(option):
     # if user choose option 1 
-    if option == 1:
-        create()
+    if option == 1: create()
     # if user choose option 2 
-    elif option == 2:
-        display()
+    elif option == 2: display()
     # if user choose option 3 
-    elif option ==3:
-        update()
+    elif option ==3: update()
     # if user choose option 4 
-    elif option ==4:
-        delete()
-
+    elif option ==4: delete()
     else: print("Thank you")
 
 def question():
@@ -59,7 +54,7 @@ def question():
 # Create Function
 def create():
     try:
-        amount_of_Student = int(input("Enter the amount of Student adding: "))
+        amount_of_Student = int(input("\n[+] Enter the amount of Student adding: "))
         for student in range(amount_of_Student):
             print("\n\tEnter Stundent Information No."+ str(student+1))
             name = input("Name : ")
@@ -125,7 +120,6 @@ def delete():
 
 # search function
 def search(idcode):
-    # could make it cleaner by creater another search Function which return the index of object in list
     for i in range(len(student_List)):
         if idcode == student_List[i].idCode:
             return student_List[i]
