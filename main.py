@@ -125,4 +125,4 @@ def search(idcode):
             return student_List[i]
             
 #  calling main function code could run
-if __name = '__main__': main()
+if __name__ = '__main__': main()
