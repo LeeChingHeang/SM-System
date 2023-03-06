@@ -41,9 +41,9 @@ def options(option):
     # if user choose option 2 
     elif option == 2: display()
     # if user choose option 3 
-    elif option ==3: update()
+    elif option == 3: update()
     # if user choose option 4 
-    elif option ==4: delete()
+    elif option == 4: delete()
     else: print("Thank you")
 
 def question():
@@ -108,21 +108,37 @@ def update():
     question()
 
 # Delete Function
+# def delete():
+#     print("\n\tRemove Student information\n")
+#     idcode = int(input("Enter the Student ID: "))
+#     item = search(idcode)
+#     if item: # to see it return student_List[i] or not
+#         student_List.remove(item) # could use pop
+#         print("Student info removed!!")
+#     else: print("No data")
+#     question()
 def delete():
     print("\n\tRemove Student information\n")
     idcode = int(input("Enter the Student ID: "))
-    item = search(idcode)
-    if item: # to see it return student_List[i] or not
-        student_List.remove(item) # could use pop
+    student = search(idcode)
+    if student:
+        student_List.pop(student_List.index(student))
         print("Student info removed!!")
-    else: print("No data")
+    else:
+        print("No data")
     question()
 
 # search function
+# def search(idcode):
+#     for i in range(len(student_List)):
+#         if idcode == student_List[i].idCode:
+#             return student_List[i]
 def search(idcode):
-    for i in range(len(student_List)):
-        if idcode == student_List[i].idCode:
-            return student_List[i]
+    for student in student_List:
+        if student.idCode == idcode:
+            return student
+    else:
+        return None
             
 #  calling main function code could run
-if __name__ = '__main__': main()
+if __name__ == '__main__': main()
